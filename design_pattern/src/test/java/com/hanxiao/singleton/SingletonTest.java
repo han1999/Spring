@@ -1,3 +1,5 @@
+package com.hanxiao.singleton;
+
 import com.hanxiao.singleton.MySingleton;
 import com.hanxiao.singleton.Outer;
 import org.junit.Test;
