@@ -1,4 +1,4 @@
-package com.hanxiao.dao;
+package com.hanxiao.get_bean.dao;
 
 /**
  * @description:
@@ -6,7 +6,7 @@ package com.hanxiao.dao;
  * @date: 2022/4/28
  **/
 
-public class UserDaoImpl implements UserDao {
+public class UserDaoImpl implements UserDao{
     @Override
     public void sayHello() {
         System.out.println("hello dao!");

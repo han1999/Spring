@@ -1,4 +1,4 @@
-package com.hanxiao.dao;
+package com.hanxiao.get_bean.service;
 
 /**
  * @description:
@@ -6,6 +6,6 @@ package com.hanxiao.dao;
  * @date: 2022/4/28
  **/
 
-public interface UserDao {
+public interface UserService {
     void sayHello();
 }

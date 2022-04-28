@@ -1,6 +1,6 @@
-package com.hanxiao.service;
+package com.hanxiao.get_bean.service;
 
-import com.hanxiao.dao.UserDao;
+import com.hanxiao.get_bean.dao.UserDao;
 
 /**
  * @description:
@@ -10,7 +10,6 @@ import com.hanxiao.dao.UserDao;
 
 public class UserServiceImpl implements UserService {
     UserDao userDao;
-
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
     }

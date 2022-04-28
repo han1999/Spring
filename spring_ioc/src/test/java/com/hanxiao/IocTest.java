@@ -1,8 +1,9 @@
 package com.hanxiao;
 
-import com.hanxiao.dao.UserDao;
-import com.hanxiao.service.UserService;
-import com.hanxiao.service.UserServiceImpl;
+import com.hanxiao.factory.bean.User;
+import com.hanxiao.get_bean.dao.UserDao;
+import com.hanxiao.get_bean.service.UserService;
+import com.hanxiao.get_bean.service.UserServiceImpl;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -36,7 +37,7 @@ public class IocTest {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
         UserService userService1 = (UserService) applicationContext.getBean("userService1");
         UserService userService11 = (UserService) applicationContext.getBean("userService1");
-        UserService userService12= (UserService) applicationContext.getBean("userService1");
+        UserService userService12 = (UserService) applicationContext.getBean("userService1");
         userService1.sayHello();
 
         UserService userService2 = applicationContext.getBean("userService2", UserService.class);
@@ -54,6 +55,40 @@ public class IocTest {
         userService2.sayHello();
         UserDao userDao = applicationContext.getBean(UserDao.class);
         userDao.sayHello();
-
     }
+
+    @Test
+    public void testConstructor() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
+//        NoParamConstructorBean noParamConstructorBean = applicationContext.getBean(NoParamConstructorBean.class);
+//        HasParamConstructorBean hasParamConstructorBean = applicationContext.getBean(HasParamConstructorBean.class);
+    }
+
+    @Test
+    public void testFactory() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
+//        User user = (User) applicationContext.getBean("userFromStaticFactory");
+//        User user2 = (User) applicationContext.getBean("userFromInstanceFactory");
+        User user = applicationContext.getBean("userFromStaticFactory", User.class);
+        User user2 = applicationContext.getBean("userFromInstanceFactory", User.class);
+        System.out.println("user = " + user);
+        System.out.println("user2 = " + user2);
+    }
+
+    @Test
+    public void testFactoryType() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
+//        User bean = applicationContext.getBean(User.class);
+    }
+
+    @Test
+    public void testFactoryBean() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
+        User user = (User) applicationContext.getBean("userFromFactoryBean");
+        System.out.println("user = " + user);
+
+        User user2 = applicationContext.getBean("userFromFactoryBean", User.class);
+    }
+
+
 }

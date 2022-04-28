@@ -1,6 +1,6 @@
-package com.hanxiao.service;
+package com.hanxiao.get_bean.service;
 
-import com.hanxiao.dao.UserDao;
+import com.hanxiao.get_bean.dao.UserDao;
 
 /**
  * @description:
