@@ -30,4 +30,8 @@
 
     <bean id="userFromFactoryBean" class="com.hanxiao.factory.factory.UserFactoryBean"/>
 
+    <bean id="singletonBean" class="com.hanxiao.scope.SingletonBean" scope="singleton"/>
+    <bean id="prototypeBean" class="com.hanxiao.scope.PrototypeBean" scope="prototype"/>
+    <bean id="defaultBean" class="com.hanxiao.scope.DefaultBean"/>
+
 </beans>

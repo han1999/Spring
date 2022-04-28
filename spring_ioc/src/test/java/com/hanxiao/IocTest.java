@@ -4,6 +4,9 @@ import com.hanxiao.factory.bean.User;
 import com.hanxiao.get_bean.dao.UserDao;
 import com.hanxiao.get_bean.service.UserService;
 import com.hanxiao.get_bean.service.UserServiceImpl;
+import com.hanxiao.scope.DefaultBean;
+import com.hanxiao.scope.PrototypeBean;
+import com.hanxiao.scope.SingletonBean;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -44,6 +47,7 @@ public class IocTest {
         UserService userService21 = applicationContext.getBean("userService2", UserService.class);
         UserService userService22 = applicationContext.getBean("userService2", UserService.class);
         userService2.sayHello();
+
     }
 
     @Test
@@ -88,6 +92,22 @@ public class IocTest {
         System.out.println("user = " + user);
 
         User user2 = applicationContext.getBean("userFromFactoryBean", User.class);
+    }
+
+    @Test
+    public void testScope() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
+        SingletonBean singletonBean1 = applicationContext.getBean(SingletonBean.class);
+        SingletonBean singletonBean2 = applicationContext.getBean(SingletonBean.class);
+        SingletonBean singletonBean3 = applicationContext.getBean(SingletonBean.class);
+
+        PrototypeBean prototypeBean1 = applicationContext.getBean(PrototypeBean.class);
+        PrototypeBean prototypeBean2 = applicationContext.getBean(PrototypeBean.class);
+        PrototypeBean prototypeBean3 = applicationContext.getBean(PrototypeBean.class);
+
+        DefaultBean defaultBean1 = applicationContext.getBean(DefaultBean.class);
+        DefaultBean defaultBean2 = applicationContext.getBean(DefaultBean.class);
+        DefaultBean defaultBean3 = applicationContext.getBean(DefaultBean.class);
     }
 
 
