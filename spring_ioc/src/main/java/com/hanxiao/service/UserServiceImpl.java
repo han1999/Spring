@@ -1,4 +1,6 @@
-package com.hanxiao;
+package com.hanxiao.service;
+
+import com.hanxiao.dao.UserDao;
 
 /**
  * @description:
@@ -7,6 +9,12 @@ package com.hanxiao;
  **/
 
 public class UserServiceImpl implements UserService {
+    UserDao userDao;
+
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
+
     @Override
     public void sayHello() {
         System.out.println("你好学姐！");
