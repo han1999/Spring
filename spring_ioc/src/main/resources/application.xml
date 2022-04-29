@@ -34,4 +34,9 @@
     <bean id="prototypeBean" class="com.hanxiao.scope.PrototypeBean" scope="prototype"/>
     <bean id="defaultBean" class="com.hanxiao.scope.DefaultBean"/>
 
+    <bean class="com.hanxiao.lifecycle.service.UserServiceImpl"
+          init-method="customInit" destroy-method="customDestroy" scope="prototype">
+        <property name="param" value="123"/>
+    </bean>
+    <bean class="com.hanxiao.lifecycle.post_processor.CustomBeanPostProcessor"/>
 </beans>

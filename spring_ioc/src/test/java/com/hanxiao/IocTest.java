@@ -110,5 +110,19 @@ public class IocTest {
         DefaultBean defaultBean3 = applicationContext.getBean(DefaultBean.class);
     }
 
+    @Test
+    public void testLifecycle() {
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
+//        applicationContext
+    }
+    @Test
+    public void testLifecycle2() {
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
+        applicationContext.getBean(com.hanxiao.lifecycle.service.UserServiceImpl.class);
+        applicationContext.getBean(com.hanxiao.lifecycle.service.UserServiceImpl.class);
+        applicationContext.getBean(com.hanxiao.lifecycle.service.UserServiceImpl.class);
+        applicationContext.close();
+    }
+
 
 }
