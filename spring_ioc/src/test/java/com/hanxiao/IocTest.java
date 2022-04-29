@@ -115,6 +115,7 @@ public class IocTest {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
 //        applicationContext
     }
+
     @Test
     public void testLifecycle2() {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
@@ -122,6 +123,12 @@ public class IocTest {
         applicationContext.getBean(com.hanxiao.lifecycle.service.UserServiceImpl.class);
         applicationContext.getBean(com.hanxiao.lifecycle.service.UserServiceImpl.class);
         applicationContext.close();
+    }
+
+    @Test
+    public void testAnnotation() {
+        com.hanxiao.annotation.service.UserServiceImpl userService = new com.hanxiao.annotation.service.UserServiceImpl();
+//        userService.sayHello();
     }
 
 

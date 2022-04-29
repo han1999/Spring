@@ -67,6 +67,10 @@ public class UserServiceImpl implements UserService,
         System.out.println("10. DisposableBean的destroy方法");
     }
 
+    // FIXME: 2022/4/29
+    // TODO: 2022/4/29
+    // STOPSHIP: 2022/4/29
+
     public void customDestroy() {
         System.out.println("11. 自定义的destroy方法");
     }

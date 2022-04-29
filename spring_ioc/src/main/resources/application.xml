@@ -39,4 +39,7 @@
         <property name="param" value="123"/>
     </bean>
     <bean class="com.hanxiao.lifecycle.post_processor.CustomBeanPostProcessor"/>
+
+    <context:component-scan base-package="com.hanxiao"/>
+    <context:property-placeholder location="classpath:param.properties"/>
 </beans>
