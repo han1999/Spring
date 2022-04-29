@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
     UserDao userDao;
 
     @Resource(name = "userDaoImpl2")//Resource 注解 来自javax而不是Spring好家伙
-    UserDao userDao2;
+            UserDao userDao2;
 
     @Autowired
     OrderDao orderDao;

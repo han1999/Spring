@@ -21,6 +21,7 @@ import java.util.Map;
  **/
 
 public class IocTest {
+
     @Test
     public void test1() {
         UserService userService = new UserServiceImpl();
