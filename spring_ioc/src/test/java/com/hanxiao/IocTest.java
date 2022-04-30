@@ -21,6 +21,7 @@ import java.util.Map;
  **/
 
 public class IocTest {
+
     @Test
     public void test1() {
         UserService userService = new UserServiceImpl();
@@ -108,6 +109,27 @@ public class IocTest {
         DefaultBean defaultBean1 = applicationContext.getBean(DefaultBean.class);
         DefaultBean defaultBean2 = applicationContext.getBean(DefaultBean.class);
         DefaultBean defaultBean3 = applicationContext.getBean(DefaultBean.class);
+    }
+
+    @Test
+    public void testLifecycle() {
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
+//        applicationContext
+    }
+
+    @Test
+    public void testLifecycle2() {
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
+        applicationContext.getBean(com.hanxiao.lifecycle.service.UserServiceImpl.class);
+        applicationContext.getBean(com.hanxiao.lifecycle.service.UserServiceImpl.class);
+        applicationContext.getBean(com.hanxiao.lifecycle.service.UserServiceImpl.class);
+        applicationContext.close();
+    }
+
+    @Test
+    public void testAnnotation() {
+        com.hanxiao.annotation.service.UserServiceImpl userService = new com.hanxiao.annotation.service.UserServiceImpl();
+//        userService.sayHello();
     }
 
 
