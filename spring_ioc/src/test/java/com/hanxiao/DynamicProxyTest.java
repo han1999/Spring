@@ -18,7 +18,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration("classpath:application.xml")
 public class DynamicProxyTest {
     @Autowired
-    @Qualifier("userServiceProxy")
+    @Qualifier("userServiceProxy")//userService有两个，factoryBean生产的是userServiceImpl代理对象，
+            // 因为它有接口，所以用的是jdk代理，生产的就是接口对象
     UserService userService;
 
     @Test
