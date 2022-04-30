@@ -1,4 +1,4 @@
-package com.hanxiao.advisor.service;
+package com.hanxiao.advisor_aspect.service;
 
 /**
  * @description:
@@ -12,5 +12,7 @@ public interface UserService {
     String method2();
 
     String method3(String name);
+
+    String method4(String name);
 
 }

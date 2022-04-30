@@ -1,4 +1,4 @@
-package com.hanxiao.advisor.service;
+package com.hanxiao.advisor_aspect.service;
 
 import org.springframework.stereotype.Service;
 
@@ -24,5 +24,12 @@ public class UserServiceImpl implements UserService {
     public String method3(String name) {
         System.out.println("UserServiceImpl.method3");
         return null;
+    }
+
+    @Override
+    public String method4(String name) {
+        System.out.println("UserServiceImpl.method4");
+        int i = 1 / 0;
+        return "method4";
     }
 }
