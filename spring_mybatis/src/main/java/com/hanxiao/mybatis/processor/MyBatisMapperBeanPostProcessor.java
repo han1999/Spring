@@ -30,7 +30,7 @@ public class MyBatisMapperBeanPostProcessor implements BeanPostProcessor {
             return bean;
         }
 
-        Object proxy= Enhancer.create(bean.getClass(), new InvocationHandler() {
+        Object proxy = Enhancer.create(bean.getClass(), new InvocationHandler() {
             @Override
             public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
                 //每次执行一个方法，mapper就更新一次
