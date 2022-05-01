@@ -1,4 +1,4 @@
-package com.hanxiao.bean;
+package com.hanxiao.pointcut_expression.bean;
 
 /**
  * @description:
