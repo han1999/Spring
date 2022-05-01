@@ -1,3 +1,5 @@
+package com.hanxiao.mybatis_in_spring;
+
 import com.hanxiao.mybatis_in_spring.bean.User;
 import com.hanxiao.mybatis_in_spring.service.UserService;
 import org.junit.Test;
@@ -21,5 +23,14 @@ public class MybatisInSpringTest {
     public void testSelectByPrimaryKey() {
         User user = userService.selectUserByPrimaryKey(2);
         System.out.println("user = " + user);
+    }
+
+    @Test
+    public void testSession() {
+        User user = userService.selectUserByPrimaryKey(2);
+        user.setId(null);
+        Integer integer = userService.insertUser(user);
+        int i = 1 / 0;
+        userService.insertUser(user);
     }
 }
