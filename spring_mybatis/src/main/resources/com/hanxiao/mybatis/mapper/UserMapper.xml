@@ -9,4 +9,8 @@
         from user
         where id = #{id}
     </select>
+
+    <insert id="insertUser">
+        insert into user values(null, #{username}, #{password}, #{age}, #{birthday})
+    </insert>
 </mapper>

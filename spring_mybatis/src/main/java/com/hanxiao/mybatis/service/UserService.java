@@ -11,4 +11,5 @@ import com.hanxiao.mybatis.bean.User;
 public interface UserService {
     User selectUserByPrimaryKey(Integer id);
 
+    Integer insertUser(User user);
 }

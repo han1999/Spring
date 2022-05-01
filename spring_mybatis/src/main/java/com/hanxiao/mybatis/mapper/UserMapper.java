@@ -11,4 +11,6 @@ import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
     User selectByPrimaryKey(@Param("id") Integer id);
+
+    Integer insertUser(User user);
 }

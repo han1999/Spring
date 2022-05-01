@@ -14,6 +14,7 @@ import javax.sql.DataSource;
 public class CustomBeanPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+        System.out.println("beanName = " + beanName);
         System.out.println("6. BeanPostProcessor的postProcessBeforeInitialization方法");
         if (beanName.contains("Service")) {
             System.out.println("Service here!");
