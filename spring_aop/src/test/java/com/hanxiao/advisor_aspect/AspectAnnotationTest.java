@@ -14,21 +14,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  **/
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:application.xml")
-public class AspectTest {
+public class AspectAnnotationTest {
+
     @Autowired
     UserService userService;
 
-    @Test//不加test注解，三角号也会出现（但是没有圆圈），会报noRunnalbeMethods错误
-    public void testAspect() {
+    @Test
+    public void testAnnotation() {
         userService.method1();
-        System.out.println();
-        String s1 = userService.method2();
-        System.out.println("s1 = " + s1);
-        System.out.println();
-        String s = userService.method3("nihao!");
-        System.out.println("s = " + s);
-        System.out.println();
-//        userService.method4("zaijian");
-        System.out.println();
     }
 }

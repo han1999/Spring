@@ -23,6 +23,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public String method3(String name) {
         System.out.println("UserServiceImpl.method3");
+        System.out.println(name);
         return null;
     }
 
