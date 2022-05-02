@@ -1,7 +1,9 @@
-package com.hanxiao.mybatis.service;
+package com.hanxiao.mybatis_in_spring.service;
 
-import com.hanxiao.mybatis.bean.User;
-import com.hanxiao.mybatis.mapper.UserMapper;
+
+import com.hanxiao.mybatis_in_spring.bean.User;
+import com.hanxiao.mybatis_in_spring.mapper.UserMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -17,7 +19,10 @@ public class UserServiceImpl implements UserService {
 //    @Autowired
 //    SqlSessionFactory sqlSessionFactory;
 
+    //为什么吧Autowired注释掉，程序还是能跑？ 因为我test里面直接用的是userMapper，omg头脑不清楚了
+    @Autowired
     UserMapper userMapper;
+
     @Override
     public User selectUserByPrimaryKey(Integer id) {
 //        SqlSession sqlSession = sqlSessionFactory.openSession();

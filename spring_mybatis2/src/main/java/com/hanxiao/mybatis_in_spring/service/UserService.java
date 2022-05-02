@@ -1,6 +1,7 @@
-package com.hanxiao.mybatis.service;
+package com.hanxiao.mybatis_in_spring.service;
 
-import com.hanxiao.mybatis.bean.User;
+
+import com.hanxiao.mybatis_in_spring.bean.User;
 
 /**
  * @description:

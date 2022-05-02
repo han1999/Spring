@@ -1,6 +1,7 @@
-package com.hanxiao.mybatis.mapper;
+package com.hanxiao.mybatis_in_spring.mapper;
 
-import com.hanxiao.mybatis.bean.User;
+
+import com.hanxiao.mybatis_in_spring.bean.User;
 import org.apache.ibatis.annotations.Param;
 
 /**
