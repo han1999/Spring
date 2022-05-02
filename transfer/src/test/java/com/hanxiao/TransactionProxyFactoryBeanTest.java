@@ -11,23 +11,18 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 /**
  * @description:
  * @author: Han Xiao
- * @date: 2022/5/1
+ * @date: 2022/5/2
  **/
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:application.xml")
-public class TransferTest {
+public class TransactionProxyFactoryBeanTest {
+
     @Autowired
-    @Qualifier("accountServiceImpl")
+    @Qualifier("accountServiceProxy")
     AccountService accountService;
 
     @Test
-    public void testTransfer() {
-        accountService.transfer(1, 2, 100);
-    }
-
-    @Test
-    public void testTransferWithException() {
-        accountService.transfer(2, 1, 100);
+    public void testProxy() {
+        accountService.transfer(1,2,1000);
     }
 }
