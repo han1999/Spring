@@ -22,4 +22,9 @@ public class TransferTest {
     public void testTransfer() {
         accountService.transfer(1,2, 100);
     }
+
+    @Test
+    public void testTransferWithException() {
+        accountService.transfer(2,1, 100);
+    }
 }
