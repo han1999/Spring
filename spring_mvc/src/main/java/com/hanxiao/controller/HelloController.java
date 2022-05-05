@@ -87,4 +87,22 @@ public class HelloController {
     public BaseRespVO login2() {
         return BaseRespVO.ok("login2");
     }
+
+    @RequestMapping(value = "header/limit", headers = "aaa")
+    @ResponseBody
+    public BaseRespVO headerLimit() {
+        return BaseRespVO.ok("header limit");
+    }
+
+    @RequestMapping(value = "accept", produces = "application/json")
+    @ResponseBody
+    public BaseRespVO accept() {
+        return BaseRespVO.ok("accept");
+    }
+
+    @RequestMapping(value = "contentType", consumes = "name/hanxiao")
+    @ResponseBody
+    public BaseRespVO contentType() {
+        return BaseRespVO.ok("contentType");
+    }
 }
