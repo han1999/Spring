@@ -1,5 +1,7 @@
 package com.hanxiao.bean;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 /**
  * @description:
  * @author: Han Xiao
@@ -7,6 +9,7 @@ package com.hanxiao.bean;
  **/
 
 public class BaseRespVO {
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     Object data;
     String msg;
     Integer errno;

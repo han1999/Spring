@@ -1,6 +1,9 @@
 package com.hanxiao.bean;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+
+import java.util.Date;
 
 /**
  * @description:
@@ -14,6 +17,9 @@ public class User {
     private Integer age;
     private Integer weight;
     private String[] hobbies;
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
+    private Date birthday;
 
     public User(String username, String password, Integer age, Integer weight, String[] hobbies) {
         this.username = username;
