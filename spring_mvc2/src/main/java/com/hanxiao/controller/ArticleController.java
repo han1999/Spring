@@ -1,10 +1,9 @@
 package com.hanxiao.controller;
 
 import com.hanxiao.bean.BaseRespVO;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpSession;
 
 /**
  * @description:
@@ -23,5 +22,28 @@ public class ArticleController {
     public BaseRespVO login(@RequestParam("username") String name,
                             @RequestParam("password") String pwd) {
         return BaseRespVO.ok(name + pwd);
+    }
+
+    @RequestMapping("header")
+    public BaseRespVO header(@RequestHeader("Accept") String[] accept,
+                             @RequestHeader("Host") String host) {
+        System.out.println("host = " + host);
+        return BaseRespVO.ok(accept);
+    }
+
+    @RequestMapping("cookie/value")
+    public BaseRespVO cookieValue(@CookieValue("name") String name) {
+        return BaseRespVO.ok(name);
+    }
+
+    @RequestMapping("session/put/{value}")
+    public BaseRespVO sessionPut(@PathVariable("value") String value, HttpSession session) {
+        session.setAttribute("value", value);
+        return BaseRespVO.ok(value);
+    }
+
+    @RequestMapping("session/fetch")
+    public BaseRespVO sessionFetch(@SessionAttribute("value") String value) {
+        return BaseRespVO.ok(value);
     }
 }

@@ -33,6 +33,7 @@ public class FileController {
         File destFile = new File(parent, originalFilename);
         String absolutePath = destFile.getAbsolutePath();
         System.out.println("absolutePath = " + absolutePath);
+        //我猜，应该是main方法所在的文件夹中
         //oh my god, absolutePath = C:\Program Files\apache-tomcat-8.5.37-windows-x64\apache-tomcat-8.5.37\bin\2.jpg
         file.transferTo(destFile);
         return BaseRespVO.ok(username);
