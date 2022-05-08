@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.support.ConfigurableConversionService;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.Map;
 
 
 /**
@@ -60,5 +60,15 @@ public class UserController {
     @RequestMapping("list")
     public BaseRespVO list(UserReqBO userReqBO) {
         return BaseRespVO.ok(userReqBO);
+    }
+
+    @GetMapping("user")
+    public BaseRespVO user() {
+        return BaseRespVO.ok();
+    }
+
+    @PostMapping("user")
+    public BaseRespVO user2(@RequestBody Map map) {
+        return BaseRespVO.ok(map);
     }
 }

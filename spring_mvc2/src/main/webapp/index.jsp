@@ -11,6 +11,19 @@
     <title>Title</title>
 </head>
 <body>
-hello!
+hello!<br>
+<form action="file/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file"><br>
+    <input type="text" name="username"><br>
+    <input type="submit">
+</form>
+<hr>
+<label>多个文件</label><br>
+
+<form action="file/list/upload" method="post" enctype="multipart/form-data">
+    <input type="file"  multiple name="files"><br>
+    <input type="text" name="username"><br>
+    <input type="submit"><br>
+</form>
 </body>
 </html>
