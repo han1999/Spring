@@ -15,4 +15,13 @@
     <!-- bean definitions here -->
     <context:component-scan base-package="com.hanxiao"/>
     <mvc:annotation-driven/>
+
+    <mvc:interceptors>
+        <bean class="com.hanxiao.interceptor.CustomHandlerInterceptor"/>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <ref bean="customHandlerInterceptor2"/>
+        </mvc:interceptor>
+        <ref bean="customHandlerInterceptor3"/>
+    </mvc:interceptors>
 </beans>
