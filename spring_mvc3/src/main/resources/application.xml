@@ -13,26 +13,6 @@
         http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!-- bean definitions here -->
-
     <context:component-scan base-package="com.hanxiao"/>
-    <mvc:annotation-driven conversion-service="conversionService"/>
-    <!--<mvc:default-servlet-handler/>-->
-    <mvc:resources mapping="/pic1/**" location="/"/>
-    <mvc:resources mapping="/pic2/**" location="classpath:/"/>
-    <!--file 和 path之间不能有空格-->
-    <mvc:resources mapping="/pic3/**" location="file:C:\Users\hx\Pictures\Saved Pictures\壁纸\"/>
-
-    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
-        <property name="converters">
-            <set>
-                <ref bean="stringToDateConverter"/>
-            </set>
-        </property>
-    </bean>
-
-    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <property name="maxUploadSize" value="5120000"/>
-    </bean>
-
-
+    <mvc:annotation-driven/>
 </beans>
