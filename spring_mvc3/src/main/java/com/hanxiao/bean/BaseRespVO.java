@@ -11,6 +11,15 @@ public class BaseRespVO {
     private String msg;
     private Integer errno;
 
+
+    public static BaseRespVO fail(Object data) {
+        return new BaseRespVO(data, "fail", 500);
+    }
+
+    public static BaseRespVO fail() {
+        return fail(null);
+    }
+
     public Object getData() {
         return data;
     }
