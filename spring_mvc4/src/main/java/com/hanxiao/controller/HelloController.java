@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Locale;
 
 /**
@@ -30,5 +31,18 @@ public class HelloController {
     public BaseRespVO hello1(Locale locale, @PathVariable String key, String[] strings) {
         String message = messageSource.getMessage(key, strings, locale);
         return BaseRespVO.ok(message);
+    }
+
+    @RequestMapping("valid")
+    public BaseRespVO valid(HttpServletRequest request) {
+        String username = request.getParameter("username");
+        if (username == null || username.length()<7) {
+            return BaseRespVO.fail("用户名过短");
+        }
+        String password = request.getParameter("password");
+        if (password == null || password.length() < 7) {
+            return BaseRespVO.fail("密码过短");
+        }
+        return BaseRespVO.ok(username + ":" + password);
     }
 }

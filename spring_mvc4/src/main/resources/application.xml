@@ -15,7 +15,7 @@
     <!-- bean definitions here -->
 
     <context:component-scan base-package="com.hanxiao"/>
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven validator="validator"/>
 
     <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
         <property name="cookieName" value="lan"/>
@@ -25,5 +25,9 @@
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
         <property name="basename" value="classpath:param"/>
         <property name="defaultEncoding" value="utf-8"/>
+    </bean>
+
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+        <property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
     </bean>
 </beans>
