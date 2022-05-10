@@ -6,6 +6,8 @@ import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import javax.sql.DataSource;
 
@@ -15,7 +17,8 @@ import javax.sql.DataSource;
  * @date: 2022/5/10
  **/
 @Configuration
-@ComponentScan("com.hanxiao")
+@ComponentScan(value = "com.hanxiao", excludeFilters = @ComponentScan.Filter(/*type = FilterType.ANNOTATION,*/
+        classes = {Controller.class, EnableWebMvc.class}))
 public class SpringConfiguration {
 
     @Bean
