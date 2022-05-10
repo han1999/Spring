@@ -3,10 +3,11 @@ package com.hanxiao.bean;
 /**
  * @description:
  * @author: Han Xiao
- * @date: 2022/5/8
+ * @date: 2022/5/9
  **/
 
 public class BaseRespVO {
+
     private Object data;
     private String msg;
     private Integer errno;
