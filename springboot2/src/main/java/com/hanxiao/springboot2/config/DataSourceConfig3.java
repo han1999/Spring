@@ -1,7 +1,6 @@
 package com.hanxiao.springboot2.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;

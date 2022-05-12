@@ -1,0 +1,34 @@
+{
+  "groups": [
+    {
+      "name": "hanxiao.db",
+      "type": "com.hanxiao.springboot2.config.DataSourceProperties",
+      "sourceType": "com.hanxiao.springboot2.config.DataSourceProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "hanxiao.db.driver-class-name",
+      "type": "java.lang.String",
+      "sourceType": "com.hanxiao.springboot2.config.DataSourceProperties"
+    },
+    {
+      "name": "hanxiao.db.password",
+      "type": "java.lang.String",
+      "sourceType": "com.hanxiao.springboot2.config.DataSourceProperties",
+      "defaultValue": 123456
+    },
+    {
+      "name": "hanxiao.db.url",
+      "type": "java.lang.String",
+      "sourceType": "com.hanxiao.springboot2.config.DataSourceProperties"
+    },
+    {
+      "name": "hanxiao.db.username",
+      "type": "java.lang.String",
+      "sourceType": "com.hanxiao.springboot2.config.DataSourceProperties",
+      "defaultValue": "root"
+    }
+  ],
+  "hints": []
+}
