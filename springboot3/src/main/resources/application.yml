@@ -1,0 +1,28 @@
+#hanxiao:
+#  db:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/spring_db?useSSL=false
+#    arr1: data1, data2, data3
+#    arr2:
+#      - data1
+#      - data2
+#      - data3
+#    list1: data1, data2, data3
+#    list2:
+#      - data1
+#      - data2
+#      - data3
+#    map1:
+#      key1: value1
+#      key2: value2
+#    map2: {key1: value1, key2: value2}
+#    user1:
+#      username: hanxiao
+#      password: 123456
+#    user2: {username: zhangsan, password: 654321}
+spring:
+  profiles:
+#    active: alpha
+    active: db, web, alpha
+
+#debug: true
