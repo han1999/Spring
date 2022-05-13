@@ -15,6 +15,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class DataSourceProperties {
     String driverClassName;
     String url;
-    String username;
-    String password;
+    String username="root";
+    String password="123456";
 }
